@@ -15,3 +15,5 @@ ansible.cfg
 # Ignore hosts file
 hosts
 
+# Ignore .gitconfig
+.gitconfig
