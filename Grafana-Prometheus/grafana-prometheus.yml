@@ -1,5 +1,5 @@
 # Author: Kabbil GI
-# Date: 19-12-2024
+# Date: 18-01-2025
 
 ---
 - name: Node Exporter config
@@ -28,12 +28,12 @@
         chdir: /root/node_exporter-1.8.2.linux-amd64
 
 - name: grafana-prometheus playbook config
-  hosts: devops
+  hosts: docker
   become_user: devops
   tasks:
     - name: Copy Docker Compose file
       copy:
-        src: /home/ansible/DEVOPS/DevOps/Grafana-Prometheus/docker-compose.yml
+        src: /home/ansible/Grafana-Prometheus/docker-compose.yml
         dest: /home/devops/docker-compose.yml
 
     - name: Ensure Prometheus configuration directory exists
@@ -43,7 +43,7 @@
 
     - name: Copy Prometheus configuration file
       copy:
-        src: /home/ansible/DEVOPS/DevOps/Grafana-Prometheus/prometheus/prometheus.yml
+        src: /home/ansible/Grafana-Prometheus/prometheus/prometheus.yml
         dest: /home/devops/prometheus/prometheus.yml
 
     - name: Ensure Grafana data directory exists
