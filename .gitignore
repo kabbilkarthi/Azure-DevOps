@@ -1,0 +1,17 @@
+# Ignore bash history files
+.bash_history
+
+# Ignore bash configuration files
+.bash_logout
+.bash_profile
+.bashrc
+
+# Ignore SSH directory
+.ssh/
+
+# Ignore Ansible configuration
+ansible.cfg
+
+# Ignore hosts file
+hosts
+
