@@ -7,3 +7,6 @@ pool:
 steps:
 - script: echo "Hello, World! This is a test run on the self-hosted agent named ansible_agent."
   displayName: 'Run script'
+
+- script: whoami
+  displayName: 'Check running user'
