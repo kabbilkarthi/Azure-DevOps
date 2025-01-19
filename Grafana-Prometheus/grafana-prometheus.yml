@@ -50,8 +50,7 @@
       file:
         path: /home/devops/grafana
         state: directory
-        owner: 472
-        group: 472
+
 
     - name: Start the Grafana and Prometheus containers by Removing existing Containers
       shell: |
