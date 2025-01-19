@@ -1,6 +1,7 @@
 ---
 - name: ping test
   hosts: all
+  ignore_erros: yes
   tasks:
     - name: ping
       ping:
