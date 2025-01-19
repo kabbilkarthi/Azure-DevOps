@@ -1,0 +1,9 @@
+trigger:
+- main
+
+pool:
+  name: ansible_agent # This specifies the agent pool with your self-hosted agent
+
+steps:
+- script: echo "Hello, World! This is a test run on the self-hosted agent named ansible_agent."
+  displayName: 'Run script'
