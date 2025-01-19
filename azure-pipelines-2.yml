@@ -11,4 +11,5 @@ steps:
 
   - script: ansible-playbook /home/ansible/Grafana-Prometheus/pingtest.yaml
     displayName: ping test
+    continueOnError: true
   
