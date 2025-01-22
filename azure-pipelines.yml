@@ -13,17 +13,29 @@ jobs:
   - job: Build2
     displayName: 'Docker Image Build'
     pool:
-      name: docker_agent
+      name: docker-agent
     steps:
     - script: |
+        # Clear existing tar files
+        rm -f $(Pipeline.Workspace)/prometheus.tar
+        rm -f $(Pipeline.Workspace)/grafana.tar
+        
+        # Build Docker images
         docker-compose -f /home/devops/docker-compose.yml up --no-start
+        
+        # Save new Docker images as tar files
         docker save -o prometheus.tar prom/prometheus:latest
         docker save -o grafana.tar grafana/grafana:latest
+        
+        # Move tar files to a separate directory
+        mkdir -p $(Pipeline.Workspace)/docker-images
+        mv prometheus.tar $(Pipeline.Workspace)/docker-images/
+        mv grafana.tar $(Pipeline.Workspace)/docker-images/
       displayName: 'Build Docker Images and Save as Tar Files'
 
     - task: PublishBuildArtifacts@1
       inputs:
-        pathtoPublish: $(Pipeline.Workspace)
+        pathtoPublish: $(Pipeline.Workspace)/docker-images
         artifactName: docker-images
         publishLocation: 'Container'
       displayName: 'Publish Docker Images as Artifacts'
