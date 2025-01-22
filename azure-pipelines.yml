@@ -2,11 +2,9 @@ trigger:
 - main
 
 pool:
-  name: ansible_agent # This specifies the agent pool with your self-hosted agent
+  name: ansible_agent 
 
 steps:
-- script: echo "Hello, World! This is a test run on the self-hosted agent named ansible_agent."
-  displayName: 'Run script'
 
-- script: whoami
-  displayName: 'Check running user'
+  - script: ansible-playbook /home/ansible/Grafana-Prometheus/grafana-prometheus.yml
+    displayName: Grafana-Prometheus Setup
