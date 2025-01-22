@@ -13,7 +13,7 @@ jobs:
   - job: Build2
     displayName: 'Docker Image Build'
     pool:
-      name: docker-agent
+      name: docker_agent
     steps:
     - script: |
         docker-compose -f /home/devops/docker-compose.yml up --no-start
