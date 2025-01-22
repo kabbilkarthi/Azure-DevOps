@@ -1,10 +1,29 @@
 trigger:
-- main
+  - main
 
-pool:
-  name: ansible_agent 
+jobs:
+  - job: Build1
+    displayName: 'Grafana-Prometheus Setup'
+    pool:
+      name: ansible_agent
+    steps:
+    - script: ansible-playbook /home/ansible/Grafana-Prometheus/grafana-prometheus.yml
+      displayName: 'Run Ansible Playbook for Grafana-Prometheus Setup'
 
-steps:
+  - job: Build2
+    displayName: 'Docker Image Build'
+    pool:
+      name: docker-agent
+    steps:
+    - script: |
+        docker-compose -f /home/devops/docker-compose.yml up --no-start
+        docker save -o prometheus.tar prom/prometheus:latest
+        docker save -o grafana.tar grafana/grafana:latest
+      displayName: 'Build Docker Images and Save as Tar Files'
 
-  - script: ansible-playbook /home/ansible/Grafana-Prometheus/grafana-prometheus.yml
-    displayName: Grafana-Prometheus Setup
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: $(Pipeline.Workspace)
+        artifactName: docker-images
+        publishLocation: 'Container'
+      displayName: 'Publish Docker Images as Artifacts'
