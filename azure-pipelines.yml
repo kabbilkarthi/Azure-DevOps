@@ -12,16 +12,13 @@ jobs:
 
   - job: Build2
     displayName: 'Docker Image Build'
+    dependsOn: Build1
     pool:
       name: docker_agent
     steps:
     - script: |
-        # Clear existing tar files
-        rm -f $(Pipeline.Workspace)/prometheus.tar
-        rm -f $(Pipeline.Workspace)/grafana.tar
-        
         # Build Docker images
-        docker-compose -f /home/devops/docker-compose.yml up --no-start
+        # docker-compose -f /home/devops/docker-compose.yml up --no-start
         
         # Save new Docker images as tar files
         docker save -o prometheus.tar prom/prometheus:latest
