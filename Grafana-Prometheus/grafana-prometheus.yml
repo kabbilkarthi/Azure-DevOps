@@ -66,3 +66,10 @@
         docker-compose up -d
       args:
         chdir: /home/devops
+    
+    - name: Apply the tags to the containers
+      shell: |
+        docker tag prom/prometheus kabbilkarthi/azure-devops:prometheus
+        docker tag grafana/grafana kabbilkarthi/azure-devops:grafana
+      args:
+        chdir: /home/devops
