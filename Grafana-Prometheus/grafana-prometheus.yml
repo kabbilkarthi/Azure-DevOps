@@ -56,7 +56,7 @@
         become_user: root
 
 
-    - name: Start the Grafana and Prometheus containers by Removing existing Containers
+    - name: Start the Grafana and Prometheus containers 
       shell: |
         # docker container prune -f
         # docker image prune -a -f
