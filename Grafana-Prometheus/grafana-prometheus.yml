@@ -28,6 +28,7 @@
 
 - name: grafana-prometheus playbook config
   hosts: docker
+  become: true
   become_user: devops
   tasks:
     - name: Copy Docker Compose file
@@ -51,9 +52,7 @@
         state: directory
         owner: 472
         group: 472
-        become: true
-        become_user: root
-
+      
     - name: Start the Grafana and Prometheus containers 
       shell: |
         # docker container prune -f
