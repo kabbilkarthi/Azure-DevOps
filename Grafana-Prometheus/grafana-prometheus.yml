@@ -55,7 +55,6 @@
         become: true
         become_user: root
 
-
     - name: Start the Grafana and Prometheus containers 
       shell: |
         # docker container prune -f
