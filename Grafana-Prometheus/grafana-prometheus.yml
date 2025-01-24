@@ -28,8 +28,6 @@
 
 - name: grafana-prometheus playbook config
   hosts: docker
-  become: true
-  become_user: devops
   tasks:
     - name: Copy Docker Compose file
       copy:
@@ -47,6 +45,8 @@
         dest: /home/devops/prometheus/prometheus.yml
 
     - name: Ensure Grafana data directory exists with 472 permissions
+      become: true
+      become_user: root
       file:
         path: /home/devops/grafana
         state: directory
