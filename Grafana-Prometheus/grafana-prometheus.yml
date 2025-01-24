@@ -1,6 +1,5 @@
 # Author: Kabbil GI
 # Date: 18-01-2025
-
 ---
 - name: Node Exporter config
   hosts: all
