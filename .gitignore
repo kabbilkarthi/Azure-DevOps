@@ -12,5 +12,6 @@ ansible.cfg
 hosts
 # Ignore .gitconfig
 .gitconfig
+
 # Ignore pingtest.yaml
 pingtest.yaml
