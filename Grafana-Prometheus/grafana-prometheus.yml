@@ -22,8 +22,7 @@
       ignore_errors: yes
     
     - name: Run Node Exporter
-      shell: |
-        nohup ./node_exporter > node_exporter.log 2>&1 &
+      shell: nohup ./node_exporter &
       args:
         chdir: /root/node_exporter-1.8.2.linux-amd64
 
