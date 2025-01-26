@@ -6,8 +6,6 @@
 .bashrc
 # Ignore SSH directory
 .ssh/
-# Ignore Ansible configuration
-ansible.cfg
 # Ignore hosts file
 hosts
 # Ignore .gitconfig
