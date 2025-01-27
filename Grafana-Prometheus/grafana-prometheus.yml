@@ -28,6 +28,7 @@
 
 - name: grafana-prometheus playbook config
   hosts: docker
+  become_user: devops
   tasks:
     - name: Copy Docker Compose file
       copy:
@@ -45,7 +46,6 @@
         dest: /home/devops/prometheus/prometheus.yml
 
     - name: Ensure Grafana data directory exists with 472 permissions
-      become: true
       become_user: root
       file:
         path: /home/devops/grafana
@@ -57,6 +57,7 @@
       copy: 
         src: /home/ansible/Grafana-Prometheus/clean.sh
         dest: /home/devops/clean.sh
+        mode: 0755
       
     - name: Start the Grafana and Prometheus containers 
       shell: |
