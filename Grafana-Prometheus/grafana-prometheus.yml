@@ -52,6 +52,11 @@
         state: directory
         owner: 472
         group: 472
+    
+    - name: Copy clean.sh file
+      copy: 
+        src: /home/ansible/Grafana-Prometheus/clean.sh
+        dest: /home/devops/clean.sh
       
     - name: Start the Grafana and Prometheus containers 
       shell: |
