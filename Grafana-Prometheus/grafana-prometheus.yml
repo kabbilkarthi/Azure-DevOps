@@ -61,11 +61,8 @@
       
     - name: Start the Grafana and Prometheus containers 
       shell: |
-        # docker container prune -f
-        # docker image prune -a -f
-        # docker-compose down
-        # docker rmi prom/prometheus:latest
-        # docker rmi grafana/grafana:latest
+        docker-compose down
+        docker image prune -a -f
         docker-compose up -d
       args:
         chdir: /home/devops
