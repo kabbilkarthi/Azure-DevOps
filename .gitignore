@@ -6,8 +6,8 @@
 .bashrc
 # Ignore SSH directory
 .ssh/
-# Ignore hosts file
-hosts
+# Ignore .ansible directory
+.ansible/
 # Ignore .gitconfig
 .gitconfig
 # Ignore pingtest.yaml
