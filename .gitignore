@@ -14,5 +14,6 @@
 pingtest.yaml
 # ignore .config folder 
 .config/
+
 # ignore myagent folder
 myagent/
