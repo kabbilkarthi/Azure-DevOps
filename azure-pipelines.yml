@@ -16,10 +16,7 @@ jobs:
     pool:
       name: docker_agent
     steps:
-    - script: |
-        # Build Docker images
-        # docker-compose -f /home/devops/docker-compose.yml up --no-start
-        
+    - script: |      
         # Save new Docker images as tar files
         docker save -o prometheus.tar prom/prometheus:latest
         docker save -o grafana.tar grafana/grafana:latest
@@ -28,7 +25,7 @@ jobs:
         mkdir -p $(Pipeline.Workspace)/docker-images
         mv prometheus.tar $(Pipeline.Workspace)/docker-images/
         mv grafana.tar $(Pipeline.Workspace)/docker-images/
-      displayName: 'Build Docker Images and Save as Tar Files'
+      displayName: 'Save Images as Tar Files'
 
     - task: PublishBuildArtifacts@1
       inputs:
