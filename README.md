@@ -2,7 +2,7 @@
 
 This project automates the setup and deployment of Grafana and Prometheus using Ansible and Docker, integrated with Azure DevOps pipelines. The setup includes configuring Node Exporter on target hosts, setting up SSL certificates and configuring Azure DNS zones, and deploying containers using Docker Compose.
 
-![Azure DevOps](https://github.com/user-attachments/assets/dc1f2019-25e8-4c91-8c26-6800e7d975d3)
+![Azure DevOps](https://github-production-user-asset-6210df.s3.amazonaws.com/91378189/408033969-dc1f2019-25e8-4c91-8c26-6800e7d975d3.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250130T152636Z&X-Amz-Expires=300&X-Amz-Signature=120fe996c11f8ea1800937af1d7662bd5c41ac238e897758f1ccbdf9a0d3b447&X-Amz-SignedHeaders=host)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
