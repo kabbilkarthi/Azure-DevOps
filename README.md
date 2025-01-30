@@ -1,5 +1,8 @@
-Grafana-Prometheus DevOps Project
-This project sets up a Grafana and Prometheus monitoring stack running inside Docker containers using docker-compose. It also includes Node Exporter for system metrics collection and automates the build and deployment processes using Azure DevOps.
+# Grafana-Prometheus Azure DevOps Project
+
+This project automates the setup and deployment of Grafana and Prometheus using Ansible and Docker, integrated with Azure DevOps pipelines. The setup includes configuring Node Exporter on target hosts, setting up SSL certificates using Azure DNS, and deploying containers using Docker Compose.
+
+![Diagram](file:///C:/Users/gikab/Downloads/Azure-DevOps.drawio.svg)
 
 Table of Contents
 Project Overview
