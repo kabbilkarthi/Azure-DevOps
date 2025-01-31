@@ -13,6 +13,7 @@ This project automates the setup and deployment of Grafana and Prometheus using 
 - [Prometheus Configuration](#prometheus-configuration)
 - [Ansible Playbook](#ansible-playbook)
 - [Clean Script](#clean-script)
+- [Proof of Work](#proof-of-work)
 - [Credits](#credits)
   
 ---
@@ -249,6 +250,12 @@ Job Steps:
 docker image prune -a -f
 docker container prune -f
 ```
+
+## Proof of work
+
+Check out this video to see the Grafana-Prometheus Azure DevOps project in action:
+
+[![Watch the video](https://img.youtube.com/vi/abc123/0.jpg)](https://youtu.be/NkDdLq4dlhM)
 
 ## Credits
 
