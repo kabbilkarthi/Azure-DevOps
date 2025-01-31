@@ -128,7 +128,7 @@ networks:
 
 ## Prometheus Configuration
 
-Create a Prometheus configuration file at prometheus/prometheus.yml with the following content, and modify localhost to the IP address of your Grafana server:
+Modify Prometheus configuration file at prometheus/prometheus.yml with the following IP address of your instances that needs to be monitored:
 
 ```yaml
 # Author: Kabbil GI
@@ -255,8 +255,7 @@ docker container prune -f
 
 Check out this video to see the Grafana-Prometheus Azure DevOps project in action:
 
-[![Watch the video]
-![Azure DevOps (1)](https://github.com/user-attachments/assets/71631a16-6978-4e44-8418-420724e35fc9)](https://youtu.be/NkDdLq4dlhM)
+[![Watch the video](https://github.com/user-attachments/assets/71631a16-6978-4e44-8418-420724e35fc9)](https://youtu.be/NkDdLq4dlhM)
 
 ## Credits
 
