@@ -255,8 +255,8 @@ docker container prune -f
 
 Check out this video to see the Grafana-Prometheus Azure DevOps project in action:
 
-[![Watch the video](![Azure DevOps (1)](https://github.com/user-attachments/assets/71631a16-6978-4e44-8418-420724e35fc9)
-)](https://youtu.be/NkDdLq4dlhM)
+[![Watch the video]
+![Azure DevOps (1)](https://github.com/user-attachments/assets/71631a16-6978-4e44-8418-420724e35fc9)](https://youtu.be/NkDdLq4dlhM)
 
 ## Credits
 
